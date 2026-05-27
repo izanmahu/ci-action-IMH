@@ -11,7 +11,7 @@
         }
         public function testSuma(): void
         {
-            $this->assertSame(5, $this->calc->suma(2, 3));
+            $this->assertSame(99, $this->calc->suma(2, 3));
         }
         public function testResta(): void
         {

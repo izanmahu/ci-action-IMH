@@ -27,4 +27,11 @@ jobs:
         run: composer install --no-progress --prefer-dist
 
       - name: Executa els tests
-        run: php vendor/bin/phpunit
+        run: php vendor/bin/phpunit --log-junit resultats.xml
+
+      - name: Puja l'informe de resultats
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultats-IMH-${{ matrix.php-version }}
+          path: resultats.xml

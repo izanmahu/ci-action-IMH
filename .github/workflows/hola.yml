@@ -1,0 +1,11 @@
+name: Hola Actions IMH
+
+on:
+  workflow_dispatch:
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Missatge de benvinguda
+        run: echo "Hola, GitHub Actions! Soc IMH"

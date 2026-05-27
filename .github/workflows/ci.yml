@@ -9,6 +9,10 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        php-version: ['8.1', '8.2', '8.3']
 
     steps:
       - name: Descarrega el codi
@@ -17,7 +21,7 @@ jobs:
       - name: Prepara PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: ${{ matrix.php-version }}
 
       - name: Instala les dependències
         run: composer install --no-progress --prefer-dist
